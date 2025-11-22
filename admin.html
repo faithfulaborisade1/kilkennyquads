@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Kilkenny Mobility</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .login-container h1 {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .login-container p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2c5f2d;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e4520;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            background: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background: #efe;
+            color: #3c3;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .admin-container {
+            display: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .admin-header {
+            background: #2c5f2d;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            font-size: 24px;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid white;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .admin-nav {
+            background: #f5f5f5;
+            padding: 0;
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .nav-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-tab:hover {
+            background: #ebebeb;
+        }
+
+        .nav-tab.active {
+            color: #2c5f2d;
+            border-bottom-color: #2c5f2d;
+            background: white;
+        }
+
+        .admin-content {
+            padding: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .products-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .product-item {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            background: #f5f5f5;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .product-details .price {
+            color: #2c5f2d;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 13px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-edit {
+            background: #2c5f2d;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: #1e4520;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+        .btn-toggle {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .btn-toggle:hover {
+            background: #e0a800;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: #333;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .edit-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .edit-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .edit-form input[type="text"],
+        .edit-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .edit-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .feature-item input {
+            flex: 1;
+        }
+
+        .btn-remove {
+            padding: 8px 12px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-add {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .save-status {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .save-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .save-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2c5f2d;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            opacity: 0.6;
+        }
+
+        .settings-form {
+            max-width: 600px;
+        }
+
+        .settings-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .settings-section h3 {
+            margin-bottom: 15px;
+            color: #2c5f2d;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .btn-add-product {
+            margin-bottom: 20px;
+            padding: 12px 24px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn-add-product:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginContainer" class="login-container">
+        <h1>🔐 Admin Login</h1>
+        <p>Kilkenny Mobility Dashboard</p>
+
+        <div id="loginError" class="error-message"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="githubToken">GitHub Token</label>
+                <input type="password" id="githubToken" placeholder="ghp_..." required>
+                <p class="help-text">Enter your GitHub Personal Access Token</p>
+            </div>
+
+            <button type="submit" class="btn" id="loginBtn">Login</button>
+        </form>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminContainer" class="admin-container">
+        <div class="admin-header">
+            <h1>📊 Kilkenny Mobility Admin</h1>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <nav class="admin-nav">
+            <button class="nav-tab active" onclick="switchTab('products', this)">Products</button>
+            <button class="nav-tab" onclick="switchTab('settings', this)">Site Settings</button>
+        </nav>
+
+        <div class="admin-content">
+            <div id="saveStatus" class="save-status"></div>
+
+            <!-- Products Tab -->
+            <div id="productsTab" class="tab-content active">
+                <button class="btn-add-product" onclick="addNewProduct()">+ Add New Product</button>
+                <div id="productsList" class="products-list">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading products...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-content">
+                <form id="settingsForm" class="settings-form">
+                    <div class="settings-section">
+                        <h3>Site Branding</h3>
+                        <div class="form-group">
+                            <label>Business Name</label>
+                            <input type="text" id="businessName">
+                            <p class="help-text">Appears in header and throughout the site</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Site Tagline</label>
+                            <input type="text" id="siteTagline">
+                            <p class="help-text">Appears below business name in header</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Browser Tab Title</label>
+                            <input type="text" id="siteTitle">
+                            <p class="help-text">Shows in browser tab</p>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Hero Section (Main Banner)</h3>
+                        <div class="form-group">
+                            <label>Hero Title</label>
+                            <input type="text" id="heroTitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Hero Subtitle</label>
+                            <input type="text" id="heroSubtitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Button Text</label>
+                            <input type="text" id="heroButtonText">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Products Section</h3>
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="productsTitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Section Subtitle</label>
+                            <input type="text" id="productsSubtitle">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Contact Section</h3>
+                        <div class="form-group">
+                            <label>Section Title</label>
+                            <input type="text" id="contactTitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Section Subtitle</label>
+                            <input type="text" id="contactSubtitle">
+                        </div>
+                        <div class="form-group">
+                            <label>"Why Choose Us" Title</label>
+                            <input type="text" id="whyChooseTitle">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="contactPhone">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="contactEmail">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 1</label>
+                            <input type="text" id="addressLine1">
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 2</label>
+                            <input type="text" id="addressLine2">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Business Hours</h3>
+                        <div class="form-group">
+                            <label>Weekday Hours</label>
+                            <input type="text" id="hoursWeekday">
+                        </div>
+                        <div class="form-group">
+                            <label>Saturday Hours</label>
+                            <input type="text" id="hoursSaturday">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Response Time Message</label>
+                            <input type="text" id="emailResponseTime">
+                        </div>
+                        <div class="form-group">
+                            <label>Showroom Note</label>
+                            <input type="text" id="showroomNote">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Benefits List</h3>
+                        <div id="benefitsList" class="feature-list"></div>
+                        <button type="button" class="btn-add" onclick="addBenefit()">+ Add Benefit</button>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Footer</h3>
+                        <div class="form-group">
+                            <label>Copyright Text</label>
+                            <input type="text" id="footerCopyright">
+                            <p class="help-text">e.g., "2025 Kilkenny Mobility. All rights reserved."</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Footer Tagline</label>
+                            <input type="text" id="footerTagline">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Save All Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Product</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+
+            <form id="editForm" class="edit-form">
+                <input type="hidden" id="editProductId">
+
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" id="editPrice" placeholder="€1,500">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="editDescription" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Available Colors</label>
+                    <input type="text" id="editColors" placeholder="Cherry Red, Glossy Black">
+                </div>
+
+                <div class="form-group">
+                    <label>Features</label>
+                    <div id="featuresList" class="feature-list"></div>
+                    <button type="button" class="btn-add" onclick="addFeature()">+ Add Feature</button>
+                </div>
+
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

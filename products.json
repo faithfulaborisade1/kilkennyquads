@@ -1,0 +1,264 @@
+{
+  "products": [
+    {
+      "id": "k-activ-captain",
+      "name": "Kymco K-Activ (Captain) Powerchair",
+      "price": "€3,350",
+      "description": "The K-Activ Captain is a premium powerchair designed for superior comfort and performance. With advanced features and robust construction, it delivers exceptional mobility and independence for outdoor and indoor use.",
+      "colors": "Metallic Mink",
+      "features": [
+        "Powerchair with Captain Seat",
+        "Enhanced Suspension System",
+        "Superior Comfort & Control"
+      ],
+      "images": [
+        "images/k-activ-captain-1.jpg",
+        "images/k-activ-captain-2.jpg",
+        "images/k-activ-captain-3.jpg",
+        "images/k-activ-captain-4.jpg",
+        "images/k-activ-captain-5.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "k-activ-rehab",
+      "name": "Kymco K-Activ (Rehab) Powerchair",
+      "price": "€3,550",
+      "description": "The K-Activ Rehab is a specialized powerchair designed with rehabilitation and therapeutic needs in mind. Featuring advanced positioning options and customizable seating, it provides optimal support and comfort for users with specific mobility requirements.",
+      "colors": "Golden Lemon, Metallic Mink",
+      "features": [
+        "Rehabilitation Focused Design",
+        "Customizable Seating Options",
+        "Advanced Positioning System"
+      ],
+      "images": [
+        "images/k-activ-rehab-1.jpg",
+        "images/k-activ-rehab-2.jpg",
+        "images/k-activ-rehab-3.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "k-lite-comfort",
+      "name": "Kymco K-Lite Comfort",
+      "price": "€1,490",
+      "description": "The K-Lite Comfort combines portability with enhanced comfort features. This lightweight and easily transportable scooter is perfect for those who need mobility on the go, without compromising on comfort and style.",
+      "colors": "Glossy Black, Metallic Mink",
+      "features": [
+        "Lightweight & Portable",
+        "Enhanced Comfort Seating",
+        "Easy to Transport"
+      ],
+      "images": [
+        "images/k-lite-comfort-1.jpg",
+        "images/k-lite-comfort-2.jpg",
+        "images/k-lite-comfort-3.jpg",
+        "images/k-lite-comfort-4.jpg",
+        "images/k-lite-comfort-5.jpg",
+        "images/k-lite-comfort-6.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "k-lite-f-fe",
+      "name": "Kymco K-Lite F/FE",
+      "price": "€2,700",
+      "description": "The K-Lite F/FE is the perfect blend of functionality and elegance. This ultra-portable scooter offers exceptional maneuverability and can be easily disassembled for transport, making it ideal for active lifestyles and travel.",
+      "colors": "Glossy Black, Metallic Mink, Sapphire Blue",
+      "features": [
+        "Ultra-Portable Design",
+        "Easy Disassembly",
+        "Compact & Maneuverable"
+      ],
+      "images": [
+        "images/k-lite-f-fe-1.jpg",
+        "images/k-lite-f-fe-2.jpg",
+        "images/k-lite-f-fe-3.jpg",
+        "images/k-lite-f-fe-4.jpg",
+        "images/k-lite-f-fe-5.jpg",
+        "images/k-lite-f-fe-6.jpg",
+        "images/k-lite-f-fe-7.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "komfy-4-8",
+      "name": "Kymco Komfy 4/8",
+      "price": "€2,950",
+      "description": "The Komfy 4/8 delivers superior comfort with its advanced suspension system and ergonomic design. Built for both indoor and outdoor use, this versatile scooter provides a smooth, comfortable ride on various terrains while maintaining excellent stability and control.",
+      "colors": "Cherry Red, Glossy Black, Mercury Silver, Sapphire Blue",
+      "features": [
+        "Advanced Suspension System",
+        "Ergonomic Comfort Design",
+        "Indoor & Outdoor Versatility"
+      ],
+      "images": [
+        "images/komfy-4-8-1.jpg",
+        "images/komfy-4-8-2.jpg",
+        "images/komfy-4-8-3.jpg",
+        "images/komfy-4-8-4.jpg",
+        "images/komfy-4-8-5.jpg",
+        "images/komfy-4-8-6.jpg",
+        "images/komfy-4-8-7.jpg",
+        "images/komfy-4-8-8.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "agility",
+      "name": "Kymco Agility",
+      "price": "€3,650",
+      "description": "The Kymco Agility is a nimble and responsive mobility scooter perfect for urban environments and everyday use. With its compact design and tight turning circle, it offers excellent maneuverability both indoors and outdoors.",
+      "colors": "Cherry Red, Glossy Black, Glossy Bronze, Metallic Mink, Sapphire Blue",
+      "features": [
+        "Max Speed: 6 km/h",
+        "Range: 28 km",
+        "Tight Turning Circle"
+      ],
+      "images": [
+        "images/agility-1.jpg",
+        "images/agility-2.jpg",
+        "images/agility-3.jpg",
+        "images/agility-4.jpg",
+        "images/agility-5.jpg",
+        "images/agility-6.jpg",
+        "images/agility-7.jpg",
+        "images/agility-8.jpg",
+        "images/agility-9.jpg",
+        "images/agility-10.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "vivio-powerchair",
+      "name": "Kymco Vivio Powerchair",
+      "price": "€2,650",
+      "description": "The Vivio Powerchair combines stylish design with modern features and exceptional maneuverability. Ideal for both indoor and outdoor use, it offers comfort, reliability, and contemporary aesthetics for users seeking an elegant mobility solution.",
+      "colors": "Golden Lemon, Metallic Mink",
+      "features": [
+        "Stylish Contemporary Design",
+        "Excellent Maneuverability",
+        "Indoor & Outdoor Use"
+      ],
+      "images": [
+        "images/vivio-powerchair-1.jpg",
+        "images/vivio-powerchair-2.jpg",
+        "images/vivio-powerchair-3.jpg",
+        "images/vivio-powerchair-4.jpg",
+        "images/vivio-powerchair-5.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "maxer",
+      "name": "Kymco Maxer",
+      "price": "€4,175",
+      "description": "Premium heavy-duty mobility scooter designed for maximum comfort and performance. The Maxer offers exceptional stability, extended range, and superior handling for users who demand the best in outdoor mobility.",
+      "colors": "Flame Orange, Glossy Black, Metallic Mink, Sapphire Blue",
+      "features": [
+        "Heavy-Duty Construction",
+        "Extended Range Capability",
+        "Superior Outdoor Performance"
+      ],
+      "images": [
+        "images/maxer-1.jpg",
+        "images/maxer-2.jpg",
+        "images/maxer-3.jpg",
+        "images/maxer-4.jpg",
+        "images/maxer-5.jpg",
+        "images/maxer-6.jpg",
+        "images/maxer-7.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "maxer-er",
+      "name": "Kymco Maxer-ER",
+      "price": "",
+      "description": "Extended Range version of the premium Maxer. Featuring enhanced battery capacity and advanced technology, the Maxer-ER delivers exceptional long-distance performance and reliability for users who need maximum range and endurance.",
+      "colors": "Metallic Mink",
+      "features": [
+        "Extended Range Battery",
+        "Premium Heavy-Duty Build",
+        "Maximum Endurance Performance"
+      ],
+      "images": [
+        "images/maxer-er-1.jpg",
+        "images/maxer-er-2.jpg",
+        "images/maxer-er-3.jpg",
+        "images/maxer-er-4.jpg",
+        "images/maxer-er-5.jpg"
+      ],
+      "visible": false
+    },
+    {
+      "id": "maxi-xls",
+      "name": "Kymco Maxi-XLS",
+      "price": "€3,750",
+      "description": "The Maxi-XLS is a robust and spacious mobility scooter designed for maximum comfort and versatility. With its extra-large seating, superior suspension, and powerful performance, it's perfect for users who need both comfort and capability on longer journeys.",
+      "colors": "Cherry Red, Glossy Black, Graphite Grey",
+      "features": [
+        "Extra-Large Seating",
+        "Superior Suspension System",
+        "Long-Distance Capability"
+      ],
+      "images": [
+        "images/maxi-xls-1.jpg",
+        "images/maxi-xls-2.jpg",
+        "images/maxi-xls-3.jpg",
+        "images/maxi-xls-4.jpg",
+        "images/maxi-xls-5.jpg",
+        "images/maxi-xls-6.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "midi-xls",
+      "name": "Kymco Midi-XLS",
+      "price": "€3,250",
+      "description": "The Midi-XLS offers the perfect balance between compact maneuverability and spacious comfort. Designed for both indoor and outdoor use, it features excellent suspension, generous seating, and reliable performance for everyday independence.",
+      "colors": "Flame Orange, Glossy Black, Metallic Mink, Sapphire Blue",
+      "features": [
+        "Balanced Design & Comfort",
+        "Indoor & Outdoor Versatility",
+        "Excellent Suspension"
+      ],
+      "images": [
+        "images/midi-xls-1.jpg",
+        "images/midi-xls-2.jpg",
+        "images/midi-xls-3.jpg",
+        "images/midi-xls-4.jpg",
+        "images/midi-xls-5.jpg",
+        "images/midi-xls-6.jpg",
+        "images/midi-xls-7.jpg",
+        "images/midi-xls-8.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "mini-comfort",
+      "name": "Kymco Mini-Comfort",
+      "price": "€2,150",
+      "description": "The Mini-Comfort is a compact and lightweight mobility scooter perfect for navigating tight spaces and everyday use. With its comfortable seating and easy-to-use controls, it provides reliable performance and excellent maneuverability for indoor and light outdoor activities.",
+      "colors": "Flame Orange, Glossy Black, Glossy Bronze, Metallic Mink, Sapphire Blue",
+      "features": [
+        "Compact & Lightweight",
+        "Easy Maneuverability",
+        "Comfortable Daily Use"
+      ],
+      "images": [
+        "images/mini-comfort-1.jpg",
+        "images/mini-comfort-2.jpg",
+        "images/mini-comfort-3.jpg",
+        "images/mini-comfort-4.jpg",
+        "images/mini-comfort-5.jpg",
+        "images/mini-comfort-6.jpg",
+        "images/mini-comfort-7.jpg",
+        "images/mini-comfort-8.jpg",
+        "images/mini-comfort-9.jpg",
+        "images/mini-comfort-10.jpg"
+      ],
+      "visible": true
+    }
+  ]
+}

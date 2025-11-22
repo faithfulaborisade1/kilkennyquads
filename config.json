@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Kilkenny Mobility - Premium Kymco Mobility Scooters",
+    "businessName": "Kilkenny Mobility",
+    "tagline": "Your Independence, Our Priority",
+    "heroTitle": "Premium Kymco Mobility Scooters",
+    "heroSubtitle": "Experience freedom and independence with our range of high-quality mobility scooters",
+    "heroButtonText": "View Our Range",
+    "productsTitle": "Our Kymco Range",
+    "productsSubtitle": "Discover our premium selection of mobility scooters",
+    "contactTitle": "Get In Touch",
+    "contactSubtitle": "Contact us today to discuss pricing and purchase options",
+    "whyChooseTitle": "Why Choose Kilkenny Mobility?"
+  },
+  "contact": {
+    "phone": "056 776 5019",
+    "phoneFormatted": "+353567765019",
+    "email": "nolans.kilkenny.carpet@gmail.com",
+    "address": {
+      "line1": "Unit 31, Hebron Industrial Estate",
+      "line2": "Kilkenny, R95 A2RN"
+    },
+    "hours": {
+      "weekday": "Mon-Fri: 9am - 5:30pm",
+      "saturday": "Sat: 9am - 1pm"
+    },
+    "emailResponseTime": "We'll respond within 24 hours",
+    "showroomNote": "Showroom viewings by appointment"
+  },
+  "benefits": [
+    "Authorized Kymco dealer",
+    "Expert advice and support",
+    "Full warranty coverage",
+    "After-sales service",
+    "Flexible payment options",
+    "Home delivery available"
+  ],
+  "footer": {
+    "copyright": "2025 Kilkenny Mobility. All rights reserved.",
+    "tagline": "Empowering independence through quality mobility solutions"
+  }
+}
